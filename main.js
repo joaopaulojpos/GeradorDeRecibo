@@ -12,7 +12,6 @@ window.addEventListener("beforeprint", (event) => {
 
   let telefone = document.getElementById("telefone").value;
 
-  console.log("Nome do Cliente", nomeCliente);
   document.getElementById(
     "firstInfoCliente"
   ).innerHTML = `<span> Nome: ${nomeCliente} &nbsp; CPF: ${cpf} &nbsp; RG: ${rg}</span>`;
@@ -22,7 +21,6 @@ window.addEventListener("beforeprint", (event) => {
   document.getElementById(
     "thirdInfoCliente"
   ).innerHTML = `<span> Telefone: ${telefone}</span>`;
-  console.log("Before print");
 
   // Parte Relacionada as informações do produto
   let produto = document.getElementById("produto").value;
@@ -42,7 +40,6 @@ window.addEventListener("beforeprint", (event) => {
   let dataCompra = document.getElementById("dataCompra").value;
   dataCompra = formatarData(dataCompra)
 
-  console.log("Nome do Cliente", nomeCliente);
   document.getElementById(
     "firstInfoProduct"
   ).innerHTML = `<span> Produto: ${produto} &nbsp; GB: ${gb} &nbsp; Cor: ${cor}</span>`;
@@ -58,12 +55,14 @@ window.addEventListener("beforeprint", (event) => {
   document.getElementById(
     "sixthInfoProduct"
   ).innerHTML = `<span> Data da Compra: ${dataCompra}</span>`;
-  console.log("Before print");
+
+  document.getElementById(
+    "buttonPrint"
+  ).innerHTML = "";
 });
 
 window.addEventListener('afterprint', (event) => {
     location.href = location.href;
-    console.log('After print');
   });
 
 function formatarValor() {
