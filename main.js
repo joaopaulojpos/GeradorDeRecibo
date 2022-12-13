@@ -49,6 +49,9 @@ window.addEventListener("beforeprint", (event) => {
   document.getElementById(
     "sixthInfoProduct"
   ).innerHTML = `<span> Data da Compra: ${dataCompra}</span>`;
+  document.getElementById(
+    "ClienteAssinatura"
+  ).innerHTML = `<p>${nomeCliente}</p>`;
 
   document.getElementById(
     "buttonPrint"
