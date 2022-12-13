@@ -33,9 +33,6 @@ window.addEventListener("beforeprint", (event) => {
   let valor = document.getElementById("valor").value;
 
   let formaPagamento = document.getElementById("formaPagamento").value;
-  let valorFormaPagamento = document.getElementById(
-    "valorFormaPagamento"
-  ).value;
 
   let dataCompra = document.getElementById("dataCompra").value;
   dataCompra = formatarData(dataCompra)
@@ -48,10 +45,7 @@ window.addEventListener("beforeprint", (event) => {
   ).innerHTML = `<span> IMEI 1: ${ime1} &nbsp; IMEI 2: ${imei2}</span>`;
   document.getElementById(
     "thirdInfoProduct"
-  ).innerHTML = `<span> Valor do Produto R$: ${valor}</span>`;
-  document.getElementById(
-    "fourthInfoProduct"
-  ).innerHTML = `<span> Forma de Pagamento: ${formaPagamento} &nbsp; R$: ${valorFormaPagamento}</span>`;
+  ).innerHTML = `<span> Valor R$: ${valor} &nbsp; Forma de Pagamento: ${formaPagamento}</span>`;
   document.getElementById(
     "sixthInfoProduct"
   ).innerHTML = `<span> Data da Compra: ${dataCompra}</span>`;
@@ -67,25 +61,6 @@ window.addEventListener('afterprint', (event) => {
 
 function formatarValor() {
     var elemento = document.getElementById('valor');
-    var valor = elemento.value;
-    
-
-    valor = valor + '';
-    valor = parseInt(valor.replace(/[\D]+/g, ''));
-    valor = valor + '';
-    valor = valor.replace(/([0-9]{2})$/g, ",$1");
-
-    if (valor.length > 6) {
-        valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-    }
-
-    elemento.value = valor;
-    if(valor == 'NaN') elemento.value = '';
-    
-}
-
-function formatarValorPagemanto() {
-    var elemento = document.getElementById('valorFormaPagamento');
     var valor = elemento.value;
     
 
